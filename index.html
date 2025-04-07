@@ -4,72 +4,87 @@
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <link href="./src/assets/images/favicon-32x32.png" rel="shortcut icon" type="image/x-icon">
-    <link href="./src/css/style.css" rel="stylesheet">
     <link href="./node_modules/normalize.css/normalize.css" rel="stylesheet">
+    <link href="./src/css/style.css" rel="stylesheet">
     <title>Mortgage App</title>
 </head>
 <body>
-<section class="calculator">
-    <h2>Mortgage Calculator</h2>
-    <form class="form">
-        <button class="reset_button" type="reset">Clear All</button>
+<div class="app_group">
+    <section class="calculator">
+        <form class="form">
+            <div class="desktop_top">
+                <h2>Mortgage Calculator</h2>
+                <button class="reset_button" type="reset">Clear All</button>
+            </div>
 
-        <label for="amount">Mortgage Amount</label>
-        <div class="input_text_group">
-            <span class="pre_input">£</span>
-            <input required id="amount" name="Amount" type="number">
-        </div>
+            <label for="amount">Mortgage Amount</label>
+            <div class="input_text_group">
+                <span class="pre_input">£</span>
+                <input id="amount" name="Amount" required type="number">
+            </div>
 
-        <label for="term">Mortgage Term</label>
-        <div class="input_text_group">
-            <input required id="term" name="Term" type="number">
-            <span class="pre_input">years</span>
-        </div>
-
-        <label for="rate">Interest Rate</label>
-        <div class="input_text_group">
-            <input required id="rate" name="Rate" type="number">
-            <span class="pre_input">%</span>
-        </div>
-
-        <label for="type">Mortgage Type</label>
-        <div class="input_radio_group">
-            <input required id="type" name="Type" type="radio">
-            <p class="mortgage_type_text">Repayment</p>
-        </div>
-        <div class="input_radio_group">
-            <input required id="type" name="Type" type="radio">
-            <p class="mortgage_type_text">Interest Only</p>
-        </div>
-
-        <button class="submit_button" type="submit">Calculate Repayments</button>
-    </form>
-</section>
-<section class="results">
-    <div class="no_results">
-        <img alt="Calculator Drawing" src="./src/assets/images/illustration-empty.svg">
-        <h2>Results shown here</h2>
-        <p>Complete the form and click “calculate repayments” to see what your monthly repayments would be. </p>
-    </div>
-    <div class="pos_results">
-        <h2>Your Results</h2>
-        <p>Your results are shown below based on the information you provided. To adjust the results, edit the form and
-            click “calculate repayments” again.</p>
-
-        <div class="mortgage_results">
-            <div class="results_container">
-                <p>Your monthly repayments</p>
-                <div class="monthly_repay">
-                    <p>£1,797.74</p>
+            <div class="input_resp">
+                <div class="responsive_label">
+                    <label for="term">Mortgage Term</label>
+                    <div class="input_text_group">
+                        <input id="term" name="Term" required type="number">
+                        <span class="pre_input">years</span>
+                    </div>
                 </div>
-                <span class="line"></span>
-                <p>Total you'll repay over the term</p>
-                <div class="total_repay">
-                    <p>£539,322.94</p>
+
+                <div class="responsive_label">
+                    <label for="rate">Interest Rate</label>
+                    <div class="input_text_group">
+                        <input id="rate" name="Rate" required type="number">
+                        <span class="pre_input">%</span>
+                    </div>
+                </div>
+            </div>
+
+            <fieldset>
+                <legend>Mortgage Type</legend>
+
+                <label class="input_radio_group">
+                    <input id="repay" name="Type" required type="radio" value="Repayment">
+                    <span class="mortgage_type_text">Repayment</span>
+                </label>
+
+                <label class="input_radio_group">
+                    <input id="interest" name="Type" required type="radio" value="Interest Only">
+                    <span class="mortgage_type_text">Interest Only</span>
+                </label>
+            </fieldset>
+
+            <button class="submit_button" type="submit">Calculate Repayments</button>
+        </form>
+    </section>
+    <section class="results">
+        <div class="no_results">
+            <img alt="Calculator Drawing" src="./src/assets/images/illustration-empty.svg">
+            <h2>Results shown here</h2>
+            <p>Complete the form and click “calculate repayments” to see what your monthly repayments would be. </p>
+        </div>
+        <div class="pos_results">
+            <h2>Your Results</h2>
+            <p>Your results are shown below based on the information you provided. To adjust the results, edit the form
+                and
+                click “calculate repayments” again.</p>
+
+            <div class="mortgage_results">
+                <div class="results_container">
+                    <p>Your monthly repayments</p>
+                    <div class="monthly_repay">
+                        <p>£1,797.74</p>
+                    </div>
+                    <span class="line"></span>
+                    <p>Total you'll repay over the term</p>
+                    <div class="total_repay">
+                        <p>£539,322.94</p>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
+</div>
 </body>
 </html>

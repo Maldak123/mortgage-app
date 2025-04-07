@@ -1,0 +1,114 @@
+.results {
+    background: var(--Slate900);
+    text-align: center;
+    padding: 2rem;
+    display: grid;
+}
+
+.no_results h2, .pos_results h2 {
+    color: white;
+    padding: 1rem 0;
+}
+
+.no_results p, .pos_results p {
+    color: var(--Slate300);
+    font-weight: 500;
+    line-height: 1.45rem;
+}
+
+.pos_results p, .pos_results h2 {
+    text-align: left;
+}
+
+.pos_results p {
+    font-size: 15px;
+}
+
+.no_results {
+    display: none;
+}
+
+.pos_results {
+    display: block;
+}
+
+.mortgage_results {
+    position: relative;
+    padding: 1rem;
+    border-radius: 5px;
+    background-color: var(--Lime);
+    margin-top: 1rem;
+}
+
+.mortgage_results::before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 3px;
+    left: 0;
+    border-radius: 5px;
+    background-color: #0e2431;
+}
+
+.results_container {
+    position: relative;
+    z-index: 1;
+}
+
+.line {
+    display: inline-block;
+    width: 100%;
+    border: 0.05rem solid var(--Slate700);
+    border-bottom: none;
+    margin: 1rem 0;
+}
+
+.monthly_repay p {
+    display: inline;
+    float: left;
+    text-align: left;
+    font-weight: 700;
+    font-size: 2.35rem;
+    color: var(--Lime);
+    margin: 0.75rem 0;
+}
+
+.total_repay p {
+    color: var(--White);
+    font-weight: 700;
+    font-size: 1.4rem;
+    margin: 0.75rem 0 0 0;
+}
+
+@media (min-width: 1024px) {
+    .results {
+        width: 35vw;
+        height: inherit;
+        border-radius: 0 25px 25px 17.5%;
+    }
+    .results > .no_results{
+        justify-items: center;
+        align-self: center;
+    }
+    .pos_results > p {
+        margin-bottom: 2.5rem;
+    }
+
+    .pos_results h2 {
+        padding-top: 0;
+    }
+
+    .monthly_repay p {
+        font-size: 3.25rem;
+        margin-top: 2rem;
+    }
+
+    .mortgage_results {
+        padding: 2rem;
+    }
+
+    .line {
+        margin: 2rem 0;
+    }
+}
