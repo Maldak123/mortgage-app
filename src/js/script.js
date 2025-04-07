@@ -13,14 +13,20 @@ form.addEventListener('submit', function (e) {
 
     if (amountInput.value === "") {
         amountInput.parentElement.nextElementSibling.classList.remove("off");
+        amountInput.previousElementSibling.classList.add("error_bg");
+        amountInput.parentElement.classList.add("error_border");
         valid = false;
     }
     if (termInput.value === "") {
         termInput.parentElement.nextElementSibling.classList.remove("off");
+        termInput.nextElementSibling.classList.add("error_bg");
+        termInput.parentElement.classList.add("error_border");
         valid = false;
     }
     if (rateInput.value === "") {
         rateInput.parentElement.nextElementSibling.classList.remove("off");
+        rateInput.nextElementSibling.classList.add("error_bg");
+        rateInput.parentElement.classList.add("error_border");
         valid = false;
     }
     if (![...typeInputs].some(input => input.checked)) {
