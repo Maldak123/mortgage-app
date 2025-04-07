@@ -1,0 +1,207 @@
+:root {
+    --White: hsl(0, 0%, 100%);
+    --Slate: hsl(202, 86%, 94%);
+    --Slate300: hsl(203, 41%, 72%);
+    --Slate500: hsl(200, 26%, 54%);
+    --Slate700: hsl(200, 24%, 40%);
+    --Slate900: hsl(202, 55%, 16%);
+    --Lime: hsl(61, 70%, 52%);
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+p {
+    font-size: 16px;
+}
+label{
+    color: var(--Slate700);
+    font-weight: 500;
+}
+.calculator{
+    padding: 2.5em 2em;
+    max-width: 100%;
+}
+.form{
+    display: flex;
+    flex-flow: column wrap;
+    gap: 0.8rem;
+}
+.reset_button{
+    background: none;
+    border: none;
+    outline: none;
+    text-align: left;
+    text-decoration: underline;
+    color: var(--Slate700);
+    font-weight: 500;
+    margin-top: 0.75rem;
+    margin-bottom: 1.5rem;
+}
+.input_text_group{
+    border: 1px solid var(--Slate500);
+    border-radius: 5px;
+    position: relative;
+    display: flex;
+    margin-bottom: 1rem;
+}
+.pre_input{
+    align-self: center;
+    padding: 0.7em 1em;
+    color: var(--Slate700);
+    font-weight: 700;
+    background: var(--Slate);
+}
+.pre_input:nth-child(1){
+    border-bottom-left-radius: inherit;
+    border-top-left-radius: inherit;
+}
+.pre_input:nth-child(2), .pre_input:nth-child(3){
+    border-bottom-right-radius: inherit;
+    border-top-right-radius: inherit;
+    right: 0;
+}
+#amount, #rate, #term{
+    width: 100%;
+    height: 2.5em;
+    border: none;
+    outline: none;
+    border-radius: inherit;
+    padding: 1.25rem;
+    color: var(--Slate900);
+    font-weight: 700;
+}
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+.input_radio_group{
+    display: flex;
+    border: 1px solid var(--Slate500);
+    padding: 0.75rem;
+    border-radius: 5px;
+}
+input[type='radio']{
+    outline: none;
+    appearance: none;
+    -webkit-appearance: none;
+    border: 2px solid var(--Slate700);
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+}
+input[type='radio']:checked{
+    border: 2px solid var(--Lime);
+}
+input[type='radio']:checked::after {
+    content: '';
+    width: 10px;
+    height: 10px;
+    position: relative;
+    top: -2px;
+    left: 3px;
+    display: inline-block;
+    border-radius: inherit;
+    background-color: var(--Lime);
+}
+.input_radio_group:has(input:checked) {
+    border: 1px solid var(--Lime);
+    background:  rgba(215, 218, 47, 0.15);
+}
+.mortgage_type_text{
+    margin-left: 1rem;
+    color: var(--Slate900);
+    font-weight: 700;
+}
+.submit_button{
+    width: 100%;
+    text-align: center;
+    background: var(--Lime);
+    padding: 1rem;
+    border: none;
+    border-radius: 50px;
+    color: var(--Slate900);
+    font-weight: 700;
+    background-image: url("../assets/images/icon-calculator.svg");
+    background-repeat: no-repeat;
+    background-position: 2rem;
+    margin-top: 1rem;
+}
+
+.results{
+    background: var(--Slate900);
+    text-align: center;
+    padding: 2rem;
+}
+.no_results h2, .pos_results h2{
+    color: white;
+    padding: 1rem 0;
+}
+.no_results p, .pos_results p{
+    color: var(--Slate300);
+    font-weight: 500;
+    line-height: 1.45rem;
+}
+.pos_results p, .pos_results h2{
+    text-align: left;
+}
+.pos_results p{
+    font-size: 15px;
+}
+.no_results{
+    display: contents;
+}
+.pos_results{
+    display: none;
+}
+.mortgage_results{
+    position: relative;
+    padding: 1rem;
+    border-radius: 5px;
+    background-color: var(--Lime);
+    margin-top: 1rem;
+}
+.mortgage_results::before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 3px;
+    left: 0;
+    border-radius: 5px;
+    background-color: #0e2431;
+}
+.results_container{
+    position: relative;
+    z-index: 1;
+}
+.line{
+    display: inline-block;
+    width: 100%;
+    border: 0.05rem solid var(--Slate700);
+    border-bottom: none;
+    margin: 1rem 0;
+}
+.monthly_repay p{
+    display: inline;
+    float: left;
+    text-align: left;
+    font-weight: 700;
+    font-size: 2.35rem;
+    color: var(--Lime);
+    margin: 0.75rem 0;
+}
+.total_repay p{
+    color: var(--White);
+    font-weight: 700;
+    font-size: 1.4rem;
+    margin: 0.75rem 0 0 0;
+}
+
