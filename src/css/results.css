@@ -28,10 +28,6 @@
     display: block;
 }
 
-.off {
-    display: none;
-}
-
 .mortgage_results {
     position: relative;
     padding: 1rem;

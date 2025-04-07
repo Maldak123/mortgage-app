@@ -26,7 +26,6 @@
     border-radius: 5px;
     position: relative;
     display: flex;
-    /*margin: 1.8rem 0 0 0;*/
 }
 .pre_input {
     align-self: center;
@@ -138,9 +137,6 @@ input[type='radio']:checked::after {
 .error_text{
     color: var(--Red);
     margin: 0.8rem 0 0 0;
-}
-.off{
-    display: none;
 }
 
 @media (min-width: 1024px) {
