@@ -26,7 +26,7 @@
     border-radius: 5px;
     position: relative;
     display: flex;
-    margin: 0.8rem 0 1.8rem 0;
+    /*margin: 1.8rem 0 0 0;*/
 }
 .pre_input {
     align-self: center;
@@ -68,7 +68,7 @@ input[type="number"]::-webkit-inner-spin-button {
     border: 1px solid var(--Slate500);
     padding: 0.75rem;
     border-radius: 5px;
-    margin: 0.8rem 0 0 0;
+    margin: 0 0 0.8rem 0;
 }
 
 input[type='radio'] {
@@ -124,6 +124,24 @@ input[type='radio']:checked::after {
     margin-top: 1.8rem;
     cursor: pointer;
 }
+.responsive_label{
+    display: flex;
+    flex-direction: column;
+}
+.error_bg{
+    background-color: var(--Red);
+    color: var(--White);
+}
+.error_border{
+    border-color: var(--Red);
+}
+.error_text{
+    color: var(--Red);
+    margin: 0.8rem 0 0 0;
+}
+.off{
+    display: none;
+}
 
 @media (min-width: 1024px) {
     body{
@@ -170,10 +188,18 @@ input[type='radio']:checked::after {
     .input_resp{
         display: flex;
         flex-direction: row;
-        gap: 1rem
+        gap: 1rem;
+        margin: 1.8rem 0;
+    }
+    .input_text_group:has(input:hover){
+        border-color: var(--Slate900);
     }
     .input_text_group:has(input:focus){
-        border-color: var(--Slate900);
+        border-color: var(--Lime);
+    }
+    .input_text_group:has(input:focus) .pre_input{
+        color: var(--Slate900);
+        background-color: var(--Lime);
     }
     .input_radio_group:hover {
         border-color: var(--Lime);

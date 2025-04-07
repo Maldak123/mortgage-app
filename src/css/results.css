@@ -24,12 +24,12 @@
     font-size: 15px;
 }
 
-.no_results {
-    display: none;
+.on {
+    display: block;
 }
 
-.pos_results {
-    display: block;
+.off {
+    display: none;
 }
 
 .mortgage_results {
